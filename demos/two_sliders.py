@@ -17,7 +17,7 @@ def show():
 
     state = st.session_state
 
-    if 'celsius' not in sqt.session_state:
+    if 'celsius' not in st.session_state:
         state.celsius = MIN_CELSIUS
         state.fahrenheit = to_fahrenheit(MIN_CELSIUS)
 
