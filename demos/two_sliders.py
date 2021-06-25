@@ -17,8 +17,9 @@ def show():
 
     state = st.session_state
 
-    if 'celsius' not in st.session_state:
+    if 'celsius' not in sqt.session_state:
         state.celsius = MIN_CELSIUS
+        state.fahrenheit = to_fahrenheit(MIN_CELSIUS)
 
     # Callbacks if something changes
     def celsius_changed():
@@ -38,7 +39,6 @@ def show():
     st.slider("Fahrenheit",
               min_value=to_fahrenheit(MIN_CELSIUS),
               max_value=to_fahrenheit(MAX_CELSIUS),
-              value=to_fahrenheit(state.celsius),
               on_change=fahrenheit_changed, key='fahrenheit')
 
     st.write('Celsius', state.celsius)
